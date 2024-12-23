@@ -8,24 +8,52 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>ROCK<br>PAPER<br>SCISSORS</h1>
-        </div>
-        <div class="scoreboard">
-            <div class="score">
-                <h2>COMPUTER SCORE</h2>
-                <p>0</p>
+        <div class="header-container">
+            <div class="game-title">
+                <h1>ROCK<br>PAPER<br>SCISSORS</h1>
             </div>
-            <div class="score">
-                <h2>YOUR SCORE</h2>
-                <p>0</p>
+            <div class="scoreboard">
+                <div class="score-box">
+                    <h2>COMPUTER SCORE</h2>
+                    <p>0</p>
+                </div>
+                <div class="score-box">
+                    <h2>YOUR SCORE</h2>
+                    <p>0</p>
+                </div>
             </div>
         </div>
-        <div class="sps">
-            <div class="choice stone"><img src="images/stone.png" alt="Stone"></div>
-            <div class="choice paper"><img src="images/paper.png" alt="Paper"></div>
-            <div class="choice scissors"><img src="images/scisor.png" alt="Scissors"></div>
+        <div class="triangle-container-parent">
+            <div class="triangle-container-child">
+                <div class="circle blue">
+                    <img src="images/stone.png" alt="Rock">
+                </div>
+                <div class="circle purple">
+                    <img src="images/scisor.png" alt="Scissors">
+                </div>
+                <div class="circle orange">
+                    <img src="images/paper.png" alt="Paper">
+                </div>
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
         </div>
+
+        <button class="popup-button" onclick="showPopup()">RULES</button>
+        
+        <div id="popup" class="popup">
+            <div class="popup-header">
+                <span>Game Rules</span>
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+            </div>
+            <ul class="popup-content">
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you'll count off "rock, paper, scissors, shoot" or just "rock, paper, scissors."</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                <li>If both players lay down the same hand, each player lays down another hand.</li>
+              </ul>
+            </div>
     </div>
     <script src="home.js"></script>
 </body>
