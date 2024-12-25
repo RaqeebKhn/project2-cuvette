@@ -55,6 +55,34 @@
               </ul>
             </div>
     </div>
+
+    <div class="result-container" id="result-area" style="display: none">
+        <div class="picks-container">
+            <div class="pick-box">
+                <h2>YOU PICKED</h2>
+                <div class="player-pick">
+                    <div class="circle blue">
+                        <img src="images/stone.png" alt="stone">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-announcement">
+                <h1 id="result-text">YOU WIN</h1>
+                <button class="play-again" onclick="resetGame()">PLAY AGAIN</button>
+            </div>
+
+            <div class="pick-box">
+                <h2>PC PICKED</h2>
+                <div class="computer-pick">
+                    <div class="circle purple">
+                        <img src="images/scisor.png" alt="scissors">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="home.js"></script>
 </body>
 </html>
