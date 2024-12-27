@@ -114,10 +114,10 @@ function resetGame() {
     triangleContainer.innerHTML = `
         <div class="triangle-container-child">
             <div class="circle blue" onclick="handleChoice('rock')">
-                <img src="images/stone.png" alt="rock">
+                <img src="images/rock.png" alt="rock">
             </div>
             <div class="circle purple" onclick="handleChoice('scissors')">
-                <img src="images/scisor.png" alt="scissors">
+                <img src="images/scissors.png" alt="scissors">
             </div>
             <div class="circle orange" onclick="handleChoice('paper')">
                 <img src="images/paper.png" alt="paper">
