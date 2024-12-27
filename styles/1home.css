@@ -123,7 +123,7 @@ body {
     height: 50%;
 }
 
-.blue {
+/* .blue {
     bottom: 25px;
     right: 160px;
     border: 10px solid #0077ff; 
@@ -140,6 +140,29 @@ body {
     left: 100px;
     transform: translateX(-22%);
     border: 10px solid #ffa500; 
+} */
+
+/* .triangle-container-child .circle {
+    position: absolute;
+} */
+
+.triangle-container-child .blue {
+    bottom: 25px;
+    right: 160px;
+    border: 10px solid #0077ff;
+}
+
+.triangle-container-child .purple {
+    bottom: 190px;
+    left: 300px;
+    border: 10px solid #a800ff;
+}
+
+.triangle-container-child .orange {
+    bottom: 90px;
+    left: 100px;
+    transform: translateX(-22%);
+    border: 10px solid #ffa500;
 }
 
 
@@ -385,7 +408,26 @@ body {
     font-weight: bold;
 }
 
-.pick-box .circle.blue {
+.picks-container .circle {
+    position: relative;
+    margin: 0 auto;
+    border-width: 10px;
+    border-style: solid;
+}
+
+.picks-container .blue {
+    border-color: #0077ff;
+}
+
+.picks-container .purple {
+    border-color: #a800ff;
+}
+
+.picks-container .orange {
+    border-color: #ffa500;
+}
+
+/* .pick-box .circle.blue {
     border-color: #0077ff;
 }
 
@@ -395,10 +437,49 @@ body {
 
 .pick-box .circle.orange {
     border-color: #ffa500;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.winner-effect {
+    position: relative;
 }
 
-/* .winner-effect {
-    padding: 30px;
+.winner-effect::before,
+.winner-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: rgba(140, 196, 97, 0.1);
-} */
+    z-index: -1;
+}
+
+.winner-effect::before {
+    width: 220px;
+    height: 220px;
+    background: #2E9A2563;
+}
+
+.winner-effect::after {
+    width: 280px;
+    height: 280px;
+    background: #2E9A2563;
+}
+
+.winner-effect .circle {
+    position: relative;
+    z-index: 1;
+}
