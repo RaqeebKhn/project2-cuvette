@@ -39,6 +39,8 @@ function getWinner(playerChoice, computerChoice) {
 }
 
 
+
+
 function handleChoice(choice) {
     const computerChoice = getComputerChoice();
     const winner = getWinner(choice, computerChoice);
