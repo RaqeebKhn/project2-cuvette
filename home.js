@@ -1,16 +1,7 @@
-function showPopup() {
-    document.getElementById("popup").style.display = "block";
-  }
-  
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-  }
-  
 
+let playerScore = parseInt(localStorage.getItem('playerScore')) || 0;
+let computerScore = parseInt(localStorage.getItem('computerScore')) || 0;
 
-
-let playerScore = 0;
-let computerScore = 0;
 const choices = ['rock', 'paper', 'scissors'];
 
 
@@ -18,6 +9,18 @@ function updateScore() {
     const scoreElements = document.querySelectorAll('.score-box p');
     scoreElements[0].textContent = computerScore;
     scoreElements[1].textContent = playerScore;
+    
+    localStorage.setItem('playerScore', playerScore);
+    localStorage.setItem('computerScore', computerScore);
+}
+
+
+function resetScores() {
+    playerScore = 0;
+    computerScore = 0;
+    localStorage.setItem('playerScore', 0);
+    localStorage.setItem('computerScore', 0);
+    updateScore();
 }
 
 
@@ -25,6 +28,7 @@ function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * 3);
     return choices[randomIndex];
 }
+
 
 function getWinner(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) return 'tie';
@@ -37,9 +41,6 @@ function getWinner(playerChoice, computerChoice) {
     }
     return 'computer';
 }
-
-
-
 
 function handleChoice(choice) {
     const computerChoice = getComputerChoice();
@@ -85,8 +86,8 @@ function handleChoice(choice) {
     }
     
     updateScore();
+    checkVictory(); 
 }
-
 
 function getColorClass(choice) {
     switch(choice) {
@@ -97,13 +98,43 @@ function getColorClass(choice) {
     }
 }
 
-
 function getResultText(winner) {
     switch(winner) {
         case 'player': return 'YOU WIN AGAINST PC';
         case 'computer': return 'YOU LOST AGAINST PC';
         default: return 'TIE UP';
     }
+}
+
+function checkVictory() {
+    if (playerScore >= 5 || computerScore >= 5) {
+        const isPlayerWinner = playerScore >= 5;
+        const victoryScreen = document.getElementById('victory-screen');
+        
+        victoryScreen.innerHTML = `
+            <div class="victory-content">
+                <div class="trophy-with-stars">
+                    <img src="images/trophy.png" alt="trophy" class="trophy">
+                    <img src="images/stars.png" alt="stars" class="stars">
+                </div>
+                <h1>${isPlayerWinner ? 'HURRAY!!' : 'GAME OVER!'}</h1>
+                <h2>${isPlayerWinner ? 'YOU WON THE GAME' : 'COMPUTER WON THE GAME'}</h2>
+                <button class="play-again-btn" onclick="startNewGame()">PLAY AGAIN</button>
+            </div>
+            <button class="rules-btn" onclick="showPopup()">RULES</button>
+        `;
+        
+        victoryScreen.style.display = 'flex';
+    }
+}
+
+
+function startNewGame() {
+    playerScore = 0;
+    computerScore = 0;
+    updateScore();
+    document.getElementById('victory-screen').style.display = 'none';
+    resetGame();
 }
 
 
@@ -143,6 +174,8 @@ function closePopup() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    updateScore();
+    
     const circles = document.querySelectorAll('.circle');
     circles.forEach(circle => {
         circle.addEventListener('click', function() {

@@ -72,13 +72,6 @@ body {
     margin: 0;
 }
 
-/* .triangle-container-parent {
-    width: 100%;
-    max-width: 500px;
-    margin: 50px auto;
-    position: relative;
-} */
-
 .triangle-container-child {
     position: relative;
     top: 50%;
@@ -87,24 +80,6 @@ body {
     width: 200px;
     height: 200px;
 }
-
-/* .triangle-container-child {
-    position: relative;
-    width: 100%;
-    height: 300px;
-} */
-
-/* .circle {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}1st try */
 
 .circle {
     position: relative;
@@ -122,29 +97,6 @@ body {
     width: 50%;
     height: 50%;
 }
-
-/* .blue {
-    bottom: 25px;
-    right: 160px;
-    border: 10px solid #0077ff; 
-}
-
-.purple {
-    bottom: 190px;
-    left: 300px;
-    border: 10px solid #a800ff; 
-}
-
-.orange {
-    bottom: 90px;
-    left: 100px;
-    transform: translateX(-22%);
-    border: 10px solid #ffa500; 
-} */
-
-/* .triangle-container-child .circle {
-    position: absolute;
-} */
 
 .triangle-container-child .blue {
     bottom: 25px;
@@ -297,17 +249,7 @@ body {
 
 
   
-/* .result-container {
-    position: relative;
-    height: 60vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 50px 0;
-} */
+
 
 
 .result-container {
@@ -316,16 +258,6 @@ body {
     margin: 50px auto;
 }
 
-/* .picks-container {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 50px;
-    width: 900px;
-    margin: 0 auto;
-    align-items: center;
-} */
-
 .picks-container {
     width: 100%;
     display: flex;
@@ -333,44 +265,9 @@ body {
     align-items: center;
 }
 
-/* .pick-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-} */
-
 .pick-box {
     text-align: center;
 }
-
-/* .pick-box h2 {
-    color: white;
-    font-size: 24px;
-    letter-spacing: 2px;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-.result-announcement {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.result-announcement h1 {
-    color: white;
-    font-size: 36px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    text-align: center;
-    margin: 0;
-} */
-
 
 .pick-box h2 {
     color: white;
@@ -385,19 +282,6 @@ body {
     color: white;
     margin-bottom: 20px;
 }
-
-/* .play-again {
-    background: white;
-    border: none;
-    padding: 12px 40px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    min-width: 200px;
-} */
 
 .play-again {
     padding: 10px 30px;
@@ -426,19 +310,6 @@ body {
 .picks-container .orange {
     border-color: #ffa500;
 }
-
-/* .pick-box .circle.blue {
-    border-color: #0077ff;
-}
-
-.pick-box .circle.purple {
-    border-color: #a800ff;
-}
-
-.pick-box .circle.orange {
-    border-color: #ffa500;
-} */
-
 
 
 
@@ -481,5 +352,102 @@ body {
 
 .winner-effect .circle {
     position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.victory-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #8CC461;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.victory-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.victory-content h1 {
+    color: white;
+    font-size: 56px;
+    margin: 0;
+}
+
+.victory-content h2 {
+    color: white;
+    font-size: 32px;
+    margin: 0;
+}
+
+.play-again-btn {
+    background: white;
+    color: #8CC461;
+    border: none;
+    border-radius: 9px;
+    padding: 15px 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.rules-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.trophy-with-stars {
+    position: relative;
+    width: 100%;
+    max-width: 600px;  
+    height: 300px;    
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trophy {
+    width: 180px;      
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.stars {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;     
+    height: auto;
     z-index: 1;
 }
